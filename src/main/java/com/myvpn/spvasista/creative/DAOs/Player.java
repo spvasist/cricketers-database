@@ -226,9 +226,6 @@ public class Player {
 
     public byte[] getProfileImage(String link) {
         URL url;
-        InputStream is = null;
-        BufferedReader br;
-        String line;
 
 
         try {
@@ -236,18 +233,14 @@ public class Player {
             BufferedImage img = ImageIO.read(url);
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             ImageIO.write(img, "jpg", baos);
-            return baos.toByteArray();
+            byte[] image = baos.toByteArray();
+            baos.close();
+            return image;
 
         } catch (MalformedURLException mue) {
 
         } catch (IOException ioe) {
 
-        } finally {
-            try {
-                if (is != null) is.close();
-            } catch (IOException ioe) {
-                // nothing to see here
-            }
         }
         return new byte[0];
     }

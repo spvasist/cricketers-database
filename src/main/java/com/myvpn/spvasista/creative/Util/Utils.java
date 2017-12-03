@@ -8,6 +8,7 @@ import com.mongodb.client.MongoDatabase;
 import com.myvpn.spvasista.creative.DAOs.PlayerUrlInfo;
 import com.myvpn.spvasista.creative.DAOs.PlayerUrlInfoList;
 import com.myvpn.spvasista.creative.Handlers.PlayersInfoHandler;
+import org.bson.BSON;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
